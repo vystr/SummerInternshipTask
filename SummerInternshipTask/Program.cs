@@ -292,6 +292,12 @@ namespace SummerInternshipTask
                             Console.Clear();
                             Console.WriteLine("Enter your chosen author's full name:");
                             name = Console.ReadLine().ToUpper();
+                            if (name.Count() < 1)
+                            {
+                                Console.WriteLine("This is not a valid name.\nPress Enter to go back.");
+                                Console.ReadLine();
+                                break;
+                            }
                             foreach (var p in BookList)
                             {
                                 if (p.Author == name)
@@ -303,8 +309,14 @@ namespace SummerInternshipTask
                         else if (n == 3)
                         {
                             Console.Clear();
-                            Console.WriteLine("\nEnter your chosen category:");
+                            Console.WriteLine("Enter your chosen category:");
                             name = Console.ReadLine().ToUpper();
+                            if (name.Count() < 1)
+                            {
+                                Console.WriteLine("This is not a valid category.\nPress Enter to go back.");
+                                Console.ReadLine();
+                                break;
+                            }
                             foreach (var p in BookList)
                             {
                                 if (p.Category == name)
@@ -318,6 +330,12 @@ namespace SummerInternshipTask
                             Console.Clear();
                             Console.WriteLine("Enter a language:");
                             name = Console.ReadLine().ToUpper();
+                            if (name.Count() < 1)
+                            {
+                                Console.WriteLine("This is not a valid language.\nPress Enter to go back.");
+                                Console.ReadLine();
+                                break;
+                            }
                             foreach (var p in BookList)
                             {
                                 if (p.Language == name)
@@ -331,9 +349,16 @@ namespace SummerInternshipTask
                             Console.Clear();
                             Console.WriteLine("Enter an ISBN (13 digits):");
                             name = Console.ReadLine();
+                            if (name.Count() != 13)
+                            {
+                                Console.WriteLine("This is not a valid ISBN.\nPress Enter to go back.");
+                                Console.ReadLine();
+                                break;
+
+                            }
                             foreach (var p in BookList)
                             {
-                                if (p.Language == name)
+                                if (p.ISBN == name)
                                     Console.WriteLine(p.FullInfo);
                             }
                             Console.WriteLine("\nPress Enter to go back.");
@@ -344,6 +369,12 @@ namespace SummerInternshipTask
                             Console.Clear();
                             Console.WriteLine("Enter the title of the book:");
                             name = Console.ReadLine().ToUpper();
+                            if (name.Count() < 1)
+                            {
+                                Console.WriteLine("This is not a valid title.\nPress Enter to go back.");
+                                Console.ReadLine();
+                                break;
+                            }
                             foreach (var p in BookList)
                             {
                                 if (p.Name == name)
